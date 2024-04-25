@@ -3,6 +3,7 @@ import { z } from 'zod';
 
 export const env = createEnv({
     server: {
+        NODE_ENV: z.enum(['production', 'development']),
         FIREBASE_ADMIN_PRIVATE_KEY: z.string(),
         FIREBASE_ADMIN_CLIENT_EMAIL: z.string(),
         FIREBASE_ADMIN_PROJECT_ID: z.string(),
