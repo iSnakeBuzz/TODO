@@ -1,11 +1,15 @@
 'use client';
 
-import GoogleIcon from '@/components/icons/google';
-import { auth, providers } from '@/firebase/client.config';
-import useLoadingIcon from '@/hooks/useLoadingIcon';
+import { useRouter } from 'next/navigation';
 import { signInWithPopup } from 'firebase/auth';
+import { auth, providers } from '@/firebase/client.config';
+
+import GoogleIcon from '@/components/icons/google';
+import useLoadingIcon from '@/hooks/useLoadingIcon';
 
 const GoogleButton = () => {
+    const router = useRouter();
+
     const { activeIcon, setLoading } = useLoadingIcon({
         icon: <GoogleIcon width={20} height={20} />,
         size: 20,
@@ -17,7 +21,9 @@ const GoogleButton = () => {
 
         signInWithPopup(auth, providers.google)
             .then((result) => {
-                console.log(result);
+                if (!result.user) return;
+
+                router.push('/');
             })
             .catch((error) => {
                 console.error(error);
