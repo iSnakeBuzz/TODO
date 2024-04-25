@@ -13,6 +13,13 @@ const firebaseAdminConfig = {
     projectId: env.FIREBASE_ADMIN_PROJECT_ID,
 };
 
+if (env.NODE_ENV === 'development') {
+    process.env['FIRESTORE_EMULATOR_HOST'] =
+        env.NEXT_PUBLIC_EMULATOR_FIRESTORE_PATH;
+    process.env['FIREBASE_AUTH_EMULATOR_HOST'] =
+        env.NEXT_PUBLIC_EMULATOR_AUTH_PATH;
+}
+
 const adminApp =
     getApps().length === 0
         ? initializeApp({
