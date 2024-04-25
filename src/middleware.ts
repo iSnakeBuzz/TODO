@@ -5,8 +5,19 @@ import { NextRequest, NextResponse } from 'next/server';
 export function middleware(request: NextRequest) {
     const session = cookies().get('session');
 
-    if (!session) {
-        return NextResponse.redirect('/auth');
+    const current_url = request.nextUrl.clone();
+    const current_path = current_url.pathname;
+
+    const isAuthPath = current_path === '/auth';
+
+    if (!session && !isAuthPath) {
+        current_url.pathname = '/auth';
+        return NextResponse.redirect(current_url);
+    }
+
+    if (session && isAuthPath) {
+        current_url.pathname = '/';
+        return NextResponse.redirect(current_url);
     }
 }
 
