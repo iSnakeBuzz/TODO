@@ -6,6 +6,7 @@ import { getApp, getApps, initializeApp } from 'firebase/app';
 import { env } from '@/env';
 import {
     GoogleAuthProvider,
+    TwitterAuthProvider,
     connectAuthEmulator,
     getAuth,
 } from 'firebase/auth';
@@ -31,6 +32,7 @@ if (env.NEXT_PUBLIC_ENV == 'development') {
 // Providers
 const providers = {
     google: new GoogleAuthProvider(),
+    twitter: new TwitterAuthProvider(),
 };
 
 export { auth, app, providers };
