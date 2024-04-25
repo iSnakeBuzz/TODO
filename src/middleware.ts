@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 // Detect session and redirect to /auth if not found
 export function middleware(request: NextRequest) {
-    const session = cookies().get('session');
+    const session = cookies().get('stid');
 
     const current_url = request.nextUrl.clone();
     const current_path = current_url.pathname;
