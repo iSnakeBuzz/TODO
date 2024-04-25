@@ -1,0 +1,26 @@
+{
+    "files.exclude": {
+        "node_modules": true
+    },
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "symbols.folders.associations": {
+        "lib": "folder-layout",
+        "hooks": "folder-blue-outline",
+        "stores": "folder-blue-outline",
+        "providers": "folder-blue-outline",
+        "actions": "folder-blue-outline"
+    },
+    "markdown.preview.breaks": true,
+    "scss.lint.unknownAtRules": "ignore",
+    "css.lint.unknownAtRules": "ignore",
+    "editor.quickSuggestions": {
+        "strings": "on"
+    }
+}
