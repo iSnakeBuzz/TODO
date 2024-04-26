@@ -1,5 +1,5 @@
-import GoogleButton from '@/components/auth/google_button';
 import React from 'react';
+import GoogleButton from '@/components/auth/google_button';
 
 const page = () => {
     return (
