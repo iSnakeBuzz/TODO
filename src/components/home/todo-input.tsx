@@ -9,7 +9,7 @@ const TodoInput = () => {
     return (
         <div
             className={cn(
-                'w-full rounded-full bg-white/10 transition-all duration-200',
+                'w-full rounded-full bg-white/10 backdrop-blur-lg backdrop-brightness-50 backdrop-saturate-150 transition-all duration-200',
                 {
                     'ring-2 ring-offset-blue-500': focus,
                 },
