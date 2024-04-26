@@ -19,7 +19,7 @@ export default async function RootLayout({
         <html lang='en'>
             <body className={inter.className}>
                 <AuthProvider>
-                    <main className='flex min-h-[100dvh] flex-col items-center p-24'>
+                    <main className='flex min-h-[100dvh] flex-col items-center'>
                         {children}
                     </main>
                 </AuthProvider>
