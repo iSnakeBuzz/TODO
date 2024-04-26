@@ -5,7 +5,7 @@ import { signInWithPopup } from 'firebase/auth';
 import { auth, providers } from '@/firebase/client.config';
 
 import GoogleIcon from '@/components/icons/google';
-import useLoadingIcon from '@/hooks/useLoadingIcon';
+import useLoadingIcon from '@/hooks/use-loading-icon';
 
 const GoogleButton = () => {
     const router = useRouter();
