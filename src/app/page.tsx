@@ -1,19 +1,16 @@
 import TodoInput from '@/components/home/todo-input';
 import SessionAvatar from '@/components/session/session-avatar';
+import TodoList from '@/components/home/todo-list';
 
 export default function Home() {
     return (
-        <div className='w-full max-w-3xl'>
-            <div className='my-6 flex items-center gap-4'>
+        <div className='flex w-full max-w-3xl flex-1 flex-col'>
+            <div className='sticky top-0 z-40 flex items-center gap-4 py-6'>
                 <TodoInput />
                 <SessionAvatar />
             </div>
 
-            <h1>Hello, world!</h1>
-            <p>
-                This is a simple Next.js app with Firebase authentication. You
-                can sign in with Google using Firebase Auth.
-            </p>
+            <TodoList />
         </div>
     );
 }
